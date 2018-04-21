@@ -32,3 +32,21 @@
   (spacemacs/setup-startup-hook)
   (require 'server)
   (unless (server-running-p) (server-start)))
+
+;; Enable global company mode
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+(setq company-idle-delay 0.1)
+(setq company-minimum-prefix-length 1)
+(setq company-backends '((company-capf company-files company-elisp company-inf-ruby company-anaconda company-go company-irony company-clang company-cmake company-css company-yasnippet) (company-dabbrev company-dabbrev-code)))
+
+;; global-set-key
+(global-set-key (kbd "C-x g") 'magit-status)
+
+;; global-set-key
+(global-set-key (kbd "C-x p") 'git-auto-commit-mode)
+
+;; set up default hotkeys for evilnc
+;;
+;; evil-nerd-commenter
+(evilnc-default-hotkeys)
