@@ -32,6 +32,10 @@ values."
    dotspacemacs-configuration-layers
    '(
      html
+     html
+     html
+     html
+     html
      python
      html
      html
@@ -352,6 +356,8 @@ you should place your code here."
                                       magit
                                       git-auto-commit-mode
                                       evil-nerd-commenter
+                                      flycheck
+                                      linum-relative
                                       )
    ;; ...
    ))
@@ -369,7 +375,9 @@ layers configuration."
                                      expand-region
                                      magit
                                      git-auto-commit-mode
-                                     evil-nerd-commenter                                     
+                                     evil-nerd-commenter
+                                     flycheck
+                                     linum-relative                                     
                                      )
   ;; 
   )
@@ -382,13 +390,14 @@ layers configuration."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(gac-automatically-push-p t)
+ '(global-linum-mode t)
  '(gnutls-trustfiles
    (quote
     ("/etc/ssl/certs/ca-certificates.crt" "/etc/pki/tls/certs/ca-bundle.crt" "/etc/ssl/ca-bundle.pem" "/usr/ssl/certs/ca-bundle.crt" "/usr/local/share/certs/ca-root-nss.crt" "/bin/cacert.pem" "~/.emacs.d/cacert.pem")))
  '(mouse-yank-at-point t)
  '(package-selected-packages
    (quote
-    (git-auto-commit-mode magit-gh-pulls magit weibo switch-buffer-functions python-mode python-environment python org-web-tools org2web org2ctex company-try-hard company-emoji company-emacs-eclim auto-complete-chunk ac-php ac-html-bootstrap ac-html-angular ac-c-headers company-distel company-dict company-anaconda cdlatex autobookmarks auto-yasnippet auto-save-buffers-enhanced auto-minor-mode auto-correct auto-complete-clang-async auctex-lua add-node-modules-path add-hooks ac-math ac-html-csswatcher ac-html ac-emoji ac-emacs-eclim git mustache simple-httpd ht org-page htmlize web web-mode-edit-element org-ehtml html2org chinese-number chinese-conv auto-indent-mode auto-complete-clang company-web company-auctex company-c-headers company-math company auto-complete-auctex auto-complete-c-headers auto-auto-indent auctex-latexmk auctex ac-helm cuda-mode sass-mode web-mode tagedit slim-mode scss-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode helm-smex smex evil org-ac auto-package-update yatex markdown-toc mmm-mode markdown-mode gh-md org-edna omn-mode ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (flycheck-bashate flycheck-pycheckers flycheck-ycmd flycheck-pos-tip flycheck-package flycheck-irony flycheck-color-mode-line company-irony-c-headers company-irony buffer-flip flycheck git-auto-commit-mode magit-gh-pulls magit weibo switch-buffer-functions python-mode python-environment python org-web-tools org2web org2ctex company-try-hard company-emoji company-emacs-eclim auto-complete-chunk ac-php ac-html-bootstrap ac-html-angular ac-c-headers company-distel company-dict company-anaconda cdlatex autobookmarks auto-yasnippet auto-save-buffers-enhanced auto-minor-mode auto-correct auto-complete-clang-async auctex-lua add-node-modules-path add-hooks ac-math ac-html-csswatcher ac-html ac-emoji ac-emacs-eclim git mustache simple-httpd ht org-page htmlize web web-mode-edit-element org-ehtml html2org chinese-number chinese-conv auto-indent-mode auto-complete-clang company-web company-auctex company-c-headers company-math company auto-complete-auctex auto-complete-c-headers auto-auto-indent auctex-latexmk auctex ac-helm cuda-mode sass-mode web-mode tagedit slim-mode scss-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode helm-smex smex evil org-ac auto-package-update yatex markdown-toc mmm-mode markdown-mode gh-md org-edna omn-mode ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

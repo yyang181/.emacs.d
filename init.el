@@ -50,3 +50,19 @@
 ;;
 ;; evil-nerd-commenter
 (evilnc-default-hotkeys)
+
+;; enable flycheck mode
+;; 
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+;; set global-linum-mode
+;; 
+(add-hook 'prog-mode-hook 'linum-mode)
+
+;; global-set-key
+;;
+;; set linum-mode
+(global-set-key (kbd "C-x t") 'linum-mode)
+
+(provide 'init)
+;;; init.el ends here
