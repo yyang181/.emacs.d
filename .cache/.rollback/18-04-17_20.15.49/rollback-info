@@ -1,2 +1,0 @@
-
-(setq update-packages-alist (quote ((evil . "evil-20180408.1423"))))
