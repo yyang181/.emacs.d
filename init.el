@@ -33,12 +33,35 @@
   (require 'server)
   (unless (server-running-p) (server-start)))
 
+;; Root directory
+(setq default-directory "c:/Users/Administrator/test/emacs/")
+
+;;
+;; Set the ~/.emacs.d directory as the directory which is this file.
+
+(setq user-emacs-directory "C:/users/administrator/appdata/roaming/.emacs.d")
+
+;; Set load path
+(add-to-list 'load-path "C:/users/administrator/appdata/roaming/.emacs.d/elpa")
+
+;; below is set code for package install
+;; 
+;; magit 
+(require 'magit)
+
 ;; Enable global company mode
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 (setq company-idle-delay 0.1)
 (setq company-minimum-prefix-length 1)
-(setq company-backends '((company-capf company-files company-elisp company-inf-ruby company-anaconda company-go company-irony company-clang company-cmake company-css company-yasnippet) (company-dabbrev company-dabbrev-code)))
+(setq company-backends '((company-capf company-files company-elisp company-cmake company-css company-yasnippet) (company-dabbrev company-dabbrev-code)))
+
+;; Chinese support
+(set-fontset-font "fontset-default"
+                  'gb18030 '("Microsoft YaHei" . "unicode-bmp"))
+
+;; org mode 9.2 更新了<s TAB按键快速添加src代码块的修改，如果依旧需要用此功能需要添加如下语句
+(require 'org-tempo)
 
 ;; global-set-key
 (global-set-key (kbd "C-x g") 'magit-status)
@@ -63,6 +86,22 @@
 ;;
 ;; set linum-mode
 (global-set-key (kbd "C-x t") 'linum-mode)
+
+;;;;;;; Package Repositories ;;;;;;;;;;;;;;
+
+(message user-init-file)
+
+(require 'package)
+
+(setq package-archives '(
+                         ("melpa" . "http://melpa.milkbox.net/packages/")
+                         ("org" . "http://orgmode.org/elpa/")
+                         ("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" .  "http://marmalade-repo.org/packages/")
+                         ))
+
+;; (package-refresh-contents)
+(package-initialize)
 
 (provide 'init)
 ;;; init.el ends here

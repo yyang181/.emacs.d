@@ -72,7 +72,7 @@ versions, set this to `emacs-version'.")
   "List of additional paths where to look for configuration layers.
 Paths must have a trailing slash (ie. `~/.mycontribs/')")
 
-(defvar dotspacemacs-install-packages 'used-but-keep-unused
+(defvar dotspacemacs-install-packages 'used-only
   "Defines the behaviour of Spacemacs when installing packages.
 Possible values are `used-only', `used-but-keep-unused' and `all'. `used-only'
 installs only explicitly used packages and uninstall any unused packages as well
