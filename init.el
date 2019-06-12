@@ -41,13 +41,71 @@
 
 (setq user-emacs-directory "C:/users/administrator/appdata/roaming/.emacs.d")
 
+;; 设置默认文件夹
+(setq default-directory "c:/Users/Administrator/test/emacs")
+
 ;; Set load path
 (add-to-list 'load-path "C:/users/administrator/appdata/roaming/.emacs.d/elpa")
 
 ;; below is set code for package install
 ;; 
-;; magit 
 (require 'magit)
+(require 'htmlize)
+
+;; web浏览器w3m
+;; 设置通过cygwin下载下来的emacs-w3m保存路径
+(add-to-list 'load-path "D:/cygwin64/home/Administrator/emacs-w3m")
+(require 'w3m)
+;; (require 'mime-w3m) 
+;; 设置主页 
+(setq w3m-home-page "http://www.baidu.com") 
+;; 设置显示图片
+(setq w3m-default-display-inline-images t)
+(setq w3m-default-toggle-inline-images t)
+;; 显示图标  
+(setq w3m-show-graphic-icons-in-header-line t) 
+(setq w3m-show-graphic-icons-in-mode-line t)
+;; 启用cookie  
+(setq w3m-use-cookies t)
+;; 设定w3m运行的参数，分别为使用cookie和使用框架 
+(setq w3m-command-arguments '("-cookie" "-F"))
+;; Browse url function use w3m
+(setq browse-url-browser-function 'w3m-browse-url)
+;; W3M view url new session in background
+(setq w3m-view-this-url-new-session-in-background t)
+
+;; smex: make command faster 
+(require 'smex) ; Not needed if you use package.el
+(smex-initialize) ; Can be omitted. This might cause a (minimal) delay
+                  ; when Smex is auto-initialized on its first run.    
+;; set key binding for smex
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+;; web-mode support for html
+;; 
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.php?\\'" . web-mode))
+
+;; try put these setting in a hook function:
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 4)
+  (setq web-mode-css-indent-offset 4)
+  (setq web-mode-code-indent-offset 4)
+  (setq web-mode-indent-style 4)
+  )
+(add-hook 'web-mode-hook  'my-web-mode-hook)
 
 ;; Enable global company mode
 (require 'company)

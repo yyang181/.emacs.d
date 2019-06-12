@@ -37,24 +37,6 @@ values."
      html
      html
      python
-     html
-     html
-     html
-     html
-     html
-     html
-     html
-     html
-     html
-     html
-     html
-     html
-     html
-     html
-     html
-     html
-     html
-     html
      markdown
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -348,6 +330,9 @@ you should place your code here."
    ;; configuration in `dotspacemacs/config'.
    ;; add packages
    dotspacemacs-additional-packages '(
+                                      smex
+                                      web-mode
+                                      htmlize
                                       w3m
                                       cuda-mode
                                       company
