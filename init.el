@@ -52,6 +52,30 @@
 (require 'magit)
 (require 'htmlize)
 
+;; ;; 所有关于latex导出pdf的设置
+;; (require 'auctex)
+;; (load "auctex.el" nil t t)
+;; (load "preview.el" nil t t)
+;; (add-hook 'LaTeX-mode-hook #'LaTeX-install-toolbar)
+;; (add-hook 'LaTeX-mode-hook 'turn-on-reftex) ; with AUCTeX LaTeX mode
+;; (add-hook 'latex-mode-hook 'turn-on-reftex) ; with Emacs latex mode
+;; (setq Tex-auto-save t)
+;; (setq Tex-parse-self t)
+;; (setq-default Tex-master nil)
+;; (setq TeX-global-PDF-mode t TeX-engine 'xetex)
+;; ;; 设置默认编译命令
+;; (add-hook 'LaTex-mode-hook
+;;           (lambda()
+;;             (add-to-list 'Tex-command-list '("XeLaTex" "%`xelatex%(mode)')'%t" Tex-run-Tex nil t))
+;;             (setq Tex-command-default "XeLaTex")
+;;             ))
+;; (require 'cdlatex)
+;; ;; 将cdlatex设置为AUCtex的辅模式
+;; (add-hook 'LaTex-mode-hook 'turn-on-cdlatex)
+
+;; latex preview pane
+(require 'latex-preview-pane)
+
 ;; web浏览器w3m
 ;; 设置通过cygwin下载下来的emacs-w3m保存路径
 (add-to-list 'load-path "D:/cygwin64/home/Administrator/emacs-w3m")

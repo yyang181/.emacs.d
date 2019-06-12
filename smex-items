@@ -1,21 +1,22 @@
 
 ;; ----- smex-history -----
 (
+ list-packages
+ eshell
  replace-string
  flush-lines
  w3m-browse-url
  w3m-buffer
- list-packages
  xwidget-webkit-browse-url
- cd
 )
 
 ;; ----- smex-data -----
 (
- (list-packages . 5)
+ (list-packages . 8)
  (xwidget-webkit-browse-url . 2)
  (w3m-buffer . 1)
  (w3m-browse-url . 1)
  (flush-lines . 1)
  (replace-string . 1)
+ (eshell . 1)
 )
