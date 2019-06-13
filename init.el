@@ -73,6 +73,16 @@
 ;; ;; 将cdlatex设置为AUCtex的辅模式
 ;; (add-hook 'LaTex-mode-hook 'turn-on-cdlatex)
 
+;; 使用org-download进行图片插入
+(require 'org-download)
+;; edit default screenshop methods to imagemagick/convert
+;; (setq org-download-screenshot-method "import %s")
+(setq org-download-screenshot-method "convert clipboard: %s")
+;; (setq-default org-download-image-dir "./images")
+;; set key binding for org-download-screenshot
+(global-set-key (kbd "C-S-y") 'org-download-screenshot)
+(add-hook 'dired-mode-hook 'org-download-enable)
+
 ;; latex preview pane
 (require 'latex-preview-pane)
 
