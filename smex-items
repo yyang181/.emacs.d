@@ -1,12 +1,12 @@
 
 ;; ----- smex-history -----
 (
+ flush-lines
  eshell
  list-packages
  iimage-mode
  w3m-browse-url
  replace-string
- flush-lines
  w3m-buffer
 )
 
@@ -16,7 +16,7 @@
  (xwidget-webkit-browse-url . 2)
  (w3m-buffer . 1)
  (w3m-browse-url . 2)
- (flush-lines . 1)
+ (flush-lines . 6)
  (replace-string . 1)
  (eshell . 2)
  (iimage-mode . 17)

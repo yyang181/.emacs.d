@@ -52,26 +52,26 @@
 (require 'magit)
 (require 'htmlize)
 
-;; ;; 所有关于latex导出pdf的设置
-;; (require 'auctex)
+;; 所有关于latex导出pdf的设置
+(require 'auctex)
+(require 'cdlatex)
 ;; (load "auctex.el" nil t t)
 ;; (load "preview.el" nil t t)
-;; (add-hook 'LaTeX-mode-hook #'LaTeX-install-toolbar)
-;; (add-hook 'LaTeX-mode-hook 'turn-on-reftex) ; with AUCTeX LaTeX mode
-;; (add-hook 'latex-mode-hook 'turn-on-reftex) ; with Emacs latex mode
-;; (setq Tex-auto-save t)
-;; (setq Tex-parse-self t)
-;; (setq-default Tex-master nil)
-;; (setq TeX-global-PDF-mode t TeX-engine 'xetex)
-;; ;; 设置默认编译命令
-;; (add-hook 'LaTex-mode-hook
-;;           (lambda()
-;;             (add-to-list 'Tex-command-list '("XeLaTex" "%`xelatex%(mode)')'%t" Tex-run-Tex nil t))
-;;             (setq Tex-command-default "XeLaTex")
-;;             ))
-;; (require 'cdlatex)
-;; ;; 将cdlatex设置为AUCtex的辅模式
-;; (add-hook 'LaTex-mode-hook 'turn-on-cdlatex)
+(add-hook 'LaTeX-mode-hook #'LaTeX-install-toolbar)
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex) ; with AUCTeX LaTeX mode
+(add-hook 'latex-mode-hook 'turn-on-reftex) ; with Emacs latex mode
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default Tex-master nil)
+(setq TeX-global-PDF-mode t TeX-engine 'xetex)
+;; 设置默认编译命令
+(add-hook 'LaTeX-mode-hook
+          (lambda()
+            (add-to-list 'TeX-command-list '("XeLaTex" "%`xelatex%(mode)% %t" TeX-run-TeX nil t))
+            (setq TeX-command-default "XeLaTex")
+            ))
+;; 将cdlatex设置为AUCtex的辅模式
+(add-hook 'LaTex-mode-hook 'turn-on-cdlatex)
 
 ;; 使用org-download进行图片插入
 (require 'org-download)
