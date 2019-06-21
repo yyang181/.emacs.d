@@ -73,6 +73,16 @@
 ;; 将cdlatex设置为AUCtex的辅模式
 (add-hook 'LaTex-mode-hook 'turn-on-cdlatex)
 
+;; 快速打开配置文件
+(defun open-init-file()
+  (interactive)
+  (find-file "~/.emacs.d/init.el"))
+;; 这一行代码，将函数 open-init-file 绑定到 <f2> 键上
+(global-set-key (kbd "<f2>") 'open-init-file)
+
+;; 设置emacs默认全屏打开
+(setq initial-frame-alist (quote ((fullscreen . maximized))))
+
 ;; 使用org-download进行图片插入
 (require 'org-download)
 ;; edit default screenshop methods to imagemagick/convert
