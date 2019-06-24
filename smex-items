@@ -1,28 +1,30 @@
 
 ;; ----- smex-history -----
 (
+ list-packages
+ eshell
+ python-mode
  w3m
  load-file
  replace-string
  replace-regexp
- flush-lines
- org-toggle-inline-images
- query-replace-regexp
 )
 
 ;; ----- smex-data -----
 (
- (list-packages . 10)
+ (list-packages . 14)
  (xwidget-webkit-browse-url . 2)
  (w3m-buffer . 1)
  (w3m-browse-url . 2)
  (flush-lines . 10)
  (replace-string . 10)
- (eshell . 2)
+ (eshell . 4)
  (iimage-mode . 17)
  (replace-regexp . 60)
  (query-replace-regexp . 10)
  (org-toggle-inline-images . 6)
  (w3m . 2)
  (load-file . 1)
+ (inferior-python-mode . 1)
+ (python-mode . 1)
 )

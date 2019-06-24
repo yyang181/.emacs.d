@@ -31,10 +31,10 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     python
      markdown
      octave
      html
-     python
      markdown
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -329,6 +329,8 @@ you should place your code here."
    ;; configuration in `dotspacemacs/config'.
    ;; add packages
    dotspacemacs-additional-packages '(
+                                      python
+                                      ein
                                       auctex
                                       cdlatex
                                       org-download
@@ -381,7 +383,8 @@ layers configuration."
  ;; If there is more than one, they won't work right.
  '(LaTeX-mode-hook
    (quote
-    (preview-mode-setup turn-on-reftex LaTeX-install-toolbar turn-on-cdlatex)))
+    (preview-mode-setup turn-on-reftex LaTeX-install-toolbar turn-on-cdlatex)) t)
+ '(evil-want-Y-yank-to-eol nil)
  '(gac-automatically-push-p t)
  '(global-linum-mode t)
  '(gnutls-trustfiles
@@ -391,7 +394,7 @@ layers configuration."
  '(org-download-screenshot-method "convert clipboard: %s")
  '(package-selected-packages
    (quote
-    (org-download latex-preview-pane pdf-tools tablist magit org-tempo w3m mime-w3m w3m-load transient git-commit with-editor auto-complete helm helm-core flycheck-bashate flycheck-pycheckers flycheck-ycmd flycheck-pos-tip flycheck-package flycheck-irony flycheck-color-mode-line company-irony-c-headers company-irony buffer-flip flycheck git-auto-commit-mode magit-gh-pulls magit weibo switch-buffer-functions python-mode python-environment python org-web-tools org2web org2ctex company-try-hard company-emoji company-emacs-eclim auto-complete-chunk ac-php ac-html-bootstrap ac-html-angular ac-c-headers company-distel company-dict company-anaconda cdlatex autobookmarks auto-yasnippet auto-save-buffers-enhanced auto-minor-mode auto-correct auto-complete-clang-async auctex-lua add-node-modules-path add-hooks ac-math ac-html-csswatcher ac-html ac-emoji ac-emacs-eclim git mustache simple-httpd ht org-page htmlize web web-mode-edit-element org-ehtml html2org chinese-number chinese-conv auto-indent-mode auto-complete-clang company-web company-auctex company-c-headers company-math company auto-complete-auctex auto-complete-c-headers auto-auto-indent auctex-latexmk auctex ac-helm cuda-mode sass-mode web-mode tagedit slim-mode scss-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode helm-smex smex evil org-ac auto-package-update yatex markdown-toc mmm-mode markdown-mode gh-md org-edna omn-mode ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (elpy yasnippet pyvenv find-file-in-project ivy py-autopep8 ipython ein skewer-mode polymode deferred websocket js2-mode org-download latex-preview-pane pdf-tools tablist magit org-tempo w3m mime-w3m w3m-load transient git-commit with-editor auto-complete helm helm-core flycheck-bashate flycheck-pycheckers flycheck-ycmd flycheck-pos-tip flycheck-package flycheck-irony flycheck-color-mode-line company-irony-c-headers company-irony buffer-flip flycheck git-auto-commit-mode magit-gh-pulls magit weibo switch-buffer-functions python-mode python-environment python org-web-tools org2web org2ctex company-try-hard company-emoji company-emacs-eclim auto-complete-chunk ac-php ac-html-bootstrap ac-html-angular ac-c-headers company-distel company-dict company-anaconda cdlatex autobookmarks auto-yasnippet auto-save-buffers-enhanced auto-minor-mode auto-correct auto-complete-clang-async auctex-lua add-node-modules-path add-hooks ac-math ac-html-csswatcher ac-html ac-emoji ac-emacs-eclim git mustache simple-httpd ht org-page htmlize web web-mode-edit-element org-ehtml html2org chinese-number chinese-conv auto-indent-mode auto-complete-clang company-web company-auctex company-c-headers company-math company auto-complete-auctex auto-complete-c-headers auto-auto-indent auctex-latexmk auctex ac-helm cuda-mode sass-mode web-mode tagedit slim-mode scss-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode helm-smex smex evil org-ac auto-package-update yatex markdown-toc mmm-mode markdown-mode gh-md org-edna omn-mode ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

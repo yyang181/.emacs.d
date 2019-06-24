@@ -73,6 +73,43 @@
 ;; 将cdlatex设置为AUCtex的辅模式
 (add-hook 'LaTex-mode-hook 'turn-on-cdlatex)
 
+;; set ipython as the default python interpreter
+(require 'ein)
+(setq python-python-command "d:/anaconda/python.exe")
+;; (setq ein:console-security-dir "d:/anaconda/")
+;; (setq ein:console-executable "d:/anaconda/Scripts/jupyter-notebook.exe")
+;; (setq ein:console-executable "d:/anaconda/Scripts/jupyter-console.exe")
+;; (setq ein:console-args "d:/anaconda/etc/jupyter")
+(require 'python)
+(add-to-list 'auto-mode-alist '("\\.py?\\'" . python-mode))
+;; set ein as the default python-file-mode
+;; (setq ein:connect-default-notebook "localhost:8888/tree")
+;; (setq ein:connect-default-notebook "http://localhost:8888/tree")
+;; (add-hook 'python-mode-hook 'ein:connect-to-default-notebook)
+;; important setup on windows
+(setq python-shell-interpreter "d:/anaconda/python.exe"
+      python-shell-interpreter-args
+      "-i d:/anaconda/Scripts/ipython-script.py")
+
+;; (require 'ipython)
+;; (when (executable-find "ipython")
+;;   (setq python-shell-interpreter "ipython"))
+;; (setq python-shell-interpreter "ipython")
+
+;; python package config
+;; (require 'python)
+;; (setq
+;;  python-shell-interpreter "ipython"
+;;  python-shell-interpreter-args ""
+;;  python-shell-prompt-regexp "In \\[[0-9]+\\]: "
+;;  python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
+;;  python-shell-completion-setup-code
+;;  "from IPython.core.completerlib import module_completion"
+;;  python-shell-completion-module-string-code
+;;  "';'.join(module_completion('''%s'''))\n"
+;;  python-shell-completion-string-code
+;;  "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
+
 ;; 快速打开配置文件
 (defun open-init-file()
   (interactive)
