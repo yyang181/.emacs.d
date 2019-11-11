@@ -1,0 +1,86 @@
+% Created 2019-10-24 ç¬šä¾ 11:33
+% Intended LaTeX compiler: pdflatex
+\documentclass{article}
+                 \usepackage{amsmath,amsfonts,amsthm,amssymb}
+                 \usepackage{setspace}
+                 \usepackage{fancyhdr}
+                 \usepackage{lastpage}
+                 \usepackage{extramarks}
+                 \usepackage{chngpage}
+                 \usepackage{soul}
+                 \usepackage[usenames,dvipsnames]{color}
+                 \usepackage{graphicx,float,wrapfig}
+                 \usepackage{ifthen}
+                 \usepackage{listings}
+                 \usepackage{courier}
+                 \usepackage[colorlinks,
+                              linkcolor=blue,
+                              anchorcolor=green,
+                              citecolor=green
+                              ]{hyperref}  
+                 \usepackage{xcolor}
+                 \usepackage{xeCJK}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.3 (Org mode 9.2.6)}, 
+ pdflang={English}}
+\begin{document}
+
+\section{åŸç®”ºéš¡ èŸéœˆâˆ ®—æœç®„§†é–«‰çš„æ ç›æ¡€ˆ†å‰è„«èŠ‹å‹}
+\label{sec:org3454d5f}
+\subsection{æŠ€æœèˆªæ¥è¥ç³–
+\label{sec:orgaee5814}
+é¢²å¯§¼˜ç’‰€ç˜š‹ - ç›æ¸¡ç‘ªç’‰€ç˜š‹ - è‘›é€‰è‘–ç•¥ - é¢²å¯§•Œç‚å¯§ï¼†æ‘°š - åˆ†å‰è„°å™¨ç•Œè–æ¡€®š
+\subsection{å…ç‘š½“æ‘°çé™£
+\label{sec:orgfd3fc7a}
+\subsubsection{æ’–å­µŸæ†ª‹å›æ›‰ƒåšé¢²å¯§¼˜ç’‰€ç˜š‹}
+\label{sec:org14cc776}
+\begin{center}
+\includegraphics[width=.9\linewidth]{åŸç®”ºéš¡ èŸéœˆâˆ ®—æœç®„§†é–«‰çš„æ ç›æ¡€ˆ†å‰è„«èŠ‹å‹/2019-10-24_11-01-29_2.jpg}
+\end{center}
+\subsubsection{æå–éŠŠå›æ›†è‘‰çš„ç›æ¸¡ç‘ªé½âŠ¥ç ´
+\label{sec:orgb2258f6}
+æ’ †æ•º—åˆå•š„éŠ€èŸé¤ƒˆ—ç›æ¸¡ç‘ªé¤ˆ›éŠµŒåŒç®ŸŸåš—Œé–«’æ‘¨è¡£š„è‘›é€‰åš—Œæ’Ÿå—‰¿›éŠµŒæ’æ‘¨åš—Œæ’ †èšè¡€ˆé–¬ç˜™‚çš„ç›æ¸¡ç‘ªæ’±åœ’•è¼¯‡å–³›æ›‰ƒé¢²å¯§•Œåš—Œåå–³è‡¬¾—åˆå”³ ç›æ¡€ˆ†å‰è„©š„éŠŠé¢²å¯§•Œç‚¹
+\begin{center}
+\includegraphics[width=.9\linewidth]{åŸç®”ºéš¡ èŸéœˆâˆ ®—æœç®„§†é–«‰çš„æ ç›æ¡€ˆ†å‰è„«èŠ‹å‹/2019-10-24_11-01-25_1.png}
+\end{center}
+\subsubsection{æ•º—åˆå•—å™¨ç•Œç‚å«£¹‹ååšé€é–«†å˜æâ”˜
+\label{sec:orgb2b7fea}
+æ’ †å›æ›†è‘‰çš„4éŠèŠ¾§’ç‚å«£½œéŠç®„¾“å…ä¼¼Œè‡èŠ¸®šéŠ‹‰çŸæ‹™è€¦çš„4éŠèŠ¾§’ç‚å«£½œéŠç®„¾“å‡ç¶½¼Œåšé€é–«†å˜æ¢
+\begin{center}
+\includegraphics[width=.9\linewidth]{åŸç®”ºéš¡ èŸéœˆâˆ ®—æœç®„§†é–«‰çš„æ ç›æ¡€ˆ†å‰è„«èŠ‹å‹/2019-10-24_11-32-39_6.png}
+\end{center}
+
+\subsection{ç˜š‹éœ‚•è“æœ}
+\label{sec:org5d4211e}
+ç›æ¡€‰åèŠ£å–éˆ­†å›æ›‰ƒæ†¿åœ’ƒå‡½š„éŠæ”¯è‘µé¢²å¯§¼˜ç‚å°¼Œæ‘¨•éƒå‡½š„é¢²å¯§¼˜ç‚å«£è›¹éœˆæ›„è”­çš„å›ç®®šå€æ½¦€‚
+\subsubsection{è‚è„°‚äº¤•å”³æ¡…›† éŠŠéƒå…¶èˆ…éŠèŠ°‚å«£è›¹éœ‚†åˆæ€»“æœåš—ŒéŠ‹éƒå…¶è›¹æ†¸„éœˆæ›„š„æ‘°šç‚é£¼
+\label{sec:org7f46427}
+\begin{center}
+\includegraphics[width=0.9\linewidth]{åŸç®”ºéš¡ èŸéœˆâˆ ®—æœç®„§†é–«‰çš„æ ç›æ¡€ˆ†å‰è„«èŠ‹å‹/2019-10-24_11-26-35_5.png}
+\end{center}
+
+\subsubsection{é½è‚è„«•å”³æ¡…›† éŠŠéƒå…¶èˆ…éŠèŠ°‚å«£è›¹éœ‚†åˆæ€»“æœåš—ŒéŠ‹éƒå…¶è›¹æ†¸„éœˆæ›„š„æ‘°šç‚é£¼
+\label{sec:org5471cb5}
+\begin{center}
+\includegraphics[width=.9\linewidth]{åŸç®”ºéš¡ èŸéœˆâˆ ®—æœç®„§†é–«‰çš„æ ç›æ¡€ˆ†å‰è„«èŠ‹å‹/2019-10-24_11-06-23_4.jpg}
+\end{center}
+\section{æ‘®˜åœå‡½š„é—æ¡…¢˜}
+\label{sec:org1bc4e78}
+\begin{enumerate}
+\item ç”æ›¹ºæ’–å­µ›æ›‰ƒåšéˆ­†é€é–«†å˜æï½‡¼Œé¤ˆœæ™èˆš„éŠèŠ¯½“éš¡šé‹¡æ€¥”æ›‰ä¹‹åš—Œé¤ˆ‘æ™èˆš„éŠèŠ¯½“éš¡šé‹¡æ€æ†¬æ’ åš—Œæ†’‚æœé¤ˆ‘æ™èˆš„éŠèŠ¯½“æœç¥ˆæ¾ˆæ‹æ‘„æ’ æ¢¯â—¤éæ ¼Œâˆªèˆªƒè³­¼šåœå…¸ˆ†å‰è„£çš„å›æ›„‰‡éŠå‡‹è…ºæ†­æ™€‚
+\item é½è‚è„«•å”³æ¡…›†éŠå“¨¼Œç”æ›¹ºåœå”³è¹‚è‘‰æ‘®˜åœå…¸ä¹‹é‡æ•ºˆæ’ çš„çŸæ‹™è€¦è›ç²¹š™åš—Œéš¡šææ†­æŠ’š„æ•¶å‹—“æ æ†é˜æŠ’š„é¢²å¯§¼˜ç’‰€ç˜š‹çš„æ•ˆæœåš—Œç”šè‡å–³èˆªƒè³¢®Œå…å†½‰æ›†¸åˆå•»„æˆæ æ†çš„ç›æ¸¡ç‘ª
+\end{enumerate}
+\section{éŠ‹éŠ€ç”‡äº™æ¥µé›¿œæ–å­µ‘}
+\label{sec:org6fc16c3}
+\begin{enumerate}
+\item é¤ˆ›éŠ€ç”‡ä¹©¼˜åŒ–æ„æˆé¢²å¯§•Œçš„ç›æ¸¡ç‘ªçš„è‘›é€‰è‘–ç•ä¹“€‚
+\item æ’–å«£¿è‚è„«•å”³æ¡…›†çš„é¢²å¯§¼˜ç’‰€ç˜š‹é¤ˆ›éŠµŒæ•ˆæœæ†“æ’˜ç¶½¼ˆç›æ¡€‰åˆç”‡äº¤µ‹éœ‚•åš—Œæ’–å­µŸæ†ª‹å›æ›‰ƒé¤ˆ›éŠµŒæ“ƒ˜æ–èˆ€èŠ‹èŸŠæ†­„ç†éŠ‹‹ååš—Œèƒè³£æ†­æŠ’š„è»“é–«ô°ˆ¦å™¨è»˜ç’‰€ç˜š‹é½âŠ¥èˆæ’©æ†­æ¢š„é—æ¡…¢˜åš—‰
+\item æ”å­µ†™éšô°ˆ¥ åš—Œæ’ †é€é–«†å˜æï¼·çš„çŒèŠ¾ˆåšæˆé Ÿæ‘°é™…ç˜¥”é˜‹1:1çš„é•è¸¹æç˜¥”
+\end{enumerate}
+\end{document}

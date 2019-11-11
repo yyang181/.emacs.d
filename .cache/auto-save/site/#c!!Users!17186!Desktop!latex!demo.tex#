@@ -1,0 +1,148 @@
+% Created 2019-10-19 ���� 12:19
+% Intended LaTeX compiler: pdflatex
+\usepackage{cvpr}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.3 (Org mode 9.2.6)}, 
+ pdflang={English}}
+\begin{document}
+
+\section{1.业务需求}
+\label{sec:org19139a3}
+精准识别不同栏位之间的栏杆或者隔板，以便将当前栏目的信息提取出来进行单个栏目层次计数或者群体性状监控。
+\section{2.方案一：基于Enet的语义分割模型}
+\label{sec:org9d1bccf}
+\subsection{模型特点}
+\label{sec:orgb002460}
+ENet的处理速度相当快,这个网络结构参数少,结构相对简单,速度快,给低功耗移动设备上实时的Segmentation提供了实际操作的可能性.
+\subsection{模型框架：}
+\label{sec:org0ba5dad}
+\subsubsection{完整的网络架构}
+\label{sec:org1be96db}
+\begin{center}
+\includegraphics[width=.9\linewidth]{方案一：基于Enet的语义分割模型/2019-10-18_21-04-16_1.png}
+\end{center}
+\subsubsection{分为几个阶段，由表格中的水平线和每个块名称后的第一个数字突出显示}
+\label{sec:org84ddd1e}
+\begin{center}
+\includegraphics[width=.9\linewidth]{方案一：基于Enet的语义分割模型/2019-10-18_21-09-29_2.png}
+\end{center}
+\subsection{小样本测试结果}
+\label{sec:org0e92a40}
+用10张标注的图片做测试，通过数据增强，得到一定量的样本。
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{2.方案一：基于Enet的语义分割模型/2019-10-18_21-43-00_6.png}
+\end{center}
+\subsection{结果分析}
+\label{sec:org3c55de3}
+从上图可以看出，在小样本集的情况下，Enet能够对训练集有一定的识别能力，但是对于测试集效果不理想。
+由于Enet网络结构参数少,结构相对简单,速度快,我们希望通过增加样本集，进行一定的数据增强来提高模型的精度，从而实现猪舍栏目分割。
+\subsection{性能分析}
+\label{sec:org2b42ac1}
+Input Tensor: 480 x 360 x 3
+\begin{center}
+\includegraphics[width=.9\linewidth]{2.方案一：基于Enet的语义分割模型/2019-10-18_21-54-21_7.png}
+\end{center}
+
+\section{3.方案二：使用高斯混合模型（GMM）的期望最大化（EM）聚类}
+\label{sec:org82f25d7}
+\subsection{模型特点}
+\label{sec:org7810f57}
+最大期望算法（Expectation-maximization algorithm）在统计中被用于寻找，依赖于不可观察的隐性变量的概率模型中，参数的最大似然估计。在统计计算中，最大期望（EM）算法是在概率（probabilistic）模型中寻找参数最大似然估计或者最大后验估计的算法，其中概率模型依赖于无法观测的隐藏变量（Latent Variable）。
+
+EM算法（Expectation Maximization Algorithm），通过求参数的最大似然估计，解决含隐变量的概率分布问题。
+
+GMM（Gaussian Mixed Model），用正态分布的概率密度函数量化数据的分布，已到达聚类的目的。
+\subsection{模型框架}
+\label{sec:orga052e44}
+\subsubsection{计算流程实例}
+\label{sec:orgd92ad0c}
+\begin{center}
+\includegraphics[width=.9\linewidth]{3.方案二：使用高斯混合模型（GMM）的期望最大化（EM）聚类/2019-10-19_09-23-25_9.png}
+\end{center}
+\subsubsection{通过EM算法来找到似然函数的极大值}
+\label{sec:org209ccc4}
+\begin{center}
+\includegraphics[width=.9\linewidth]{3.方案二：使用高斯混合模型（GMM）的期望最大化（EM）聚类/2019-10-19_09-20-50_8.png}
+\end{center}
+\begin{itemize}
+\item 在绿色线位置，找到一个γγ函数，能够使得该函数最接近目标函数， 固定γγ函数，找到最大值，然后更新θθ,得到红线；
+\item 对于红线位置的参数θθ：固定θθ，找到一个最好的函数γγ，使得该函数更接近目标函数。重复该过程，直到收敛到局部最大值。
+\end{itemize}
+\subsubsection{第一步是计算期望（E）}
+\label{sec:org2798dd7}
+利用对隐藏变量的现有估计值，计算其最大似然估计值
+\subsubsection{第二步是最大化（M）}
+\label{sec:org1fb48b1}
+最大化在 E 步上求得的最大似然值来计算参数的值。M 步上找到的参数估计值被用于下一个 E 步计算中，这个过程不断交替进行
+\subsection{在栏目分割模型的实现}
+\label{sec:orgfa951e9}
+\subsubsection{预期的分割效果}
+\label{sec:orge73ccde}
+\begin{center}
+\includegraphics[width=.9\linewidth]{3.方案二：使用高斯混合模型（GMM）的期望最大化（EM）聚类/2019-10-19_09-35-45_10.jpg}
+\end{center}
+
+在原始图中实现聚类，从而实现猪舍栏目分割
+\begin{itemize}
+\item 在图中标注的4个点位置对应猪栏实景固定明显的标识作为聚类的依据
+\item 用EM实现聚类
+\end{itemize}
+\subsection{性能分析}
+\label{sec:org9f668de}
+本方案计算量很小，运行速度快，需要验证分割的精度
+\section{4.标注方法}
+\label{sec:org8924a2c}
+\subsection{直接标注猪栏边界}
+\label{sec:orgb9bc9ce}
+存在背景色差不明显导致的识别效果不好
+\subsection{设置突出的标识点}
+\label{sec:orge150f08}
+识别精度高，并且便于后续的栏目划分
+\section{5.工作进展}
+\label{sec:orga039a0f}
+\begin{itemize}
+\item Mask-RCNN模型识别个体模型已完成
+\item Enet模型已完成
+\item SqueezeNet模型已完成
+\end{itemize}
+\section{6.下一步工作}
+\label{sec:org4cd56ea}
+\begin{itemize}
+\item 完成数据采集及标注
+\item 完成Enet模型精简及优化
+\item 完成EM模型搭建
+\item 完成栏目分割项目并部署
+\end{itemize}
+\section{7.参考文献}
+\label{sec:org9cc36c2}
+[1] S. Ren, K. He, R. Girshick, and J. Sun. Faster R-CNN: Towards real-time object detection with region proposal networks. In NIPS, 2015. 1, 2, 3, 4, 7
+[2] K. He, G. Gkioxari, P. Doll´ar, R. Girshick. Mask R-CNN. In CVPR, 2017.
+[3] A. Paszke, A. Chaurasia, S. Kim and E. Culurciello. ENet: A Deep Neural Network Architecture for Real-Time Semantic Segmentation. In ArXiv, 2017. 1606.02147
+\end{document}
