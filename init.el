@@ -17,7 +17,7 @@
 (setq gc-cons-threshold 100000000)
 
 (defconst spacemacs-version         "0.200.13" "Spacemacs version.")
-(defconst spacemacs-emacs-min-version   "24.4" "Minimal version of Emacs.")
+(defconst spacemacs-emacs-min-version   "26.3" "Minimal version of Emacs.")
 
 (if (not (version<= spacemacs-emacs-min-version emacs-version))
     (error (concat "Your version of Emacs (%s) is too old. "
@@ -34,23 +34,76 @@
   (unless (server-running-p) (server-start)))
 
 ;; Root directory
-(setq default-directory "c:/Users/Administrator/test/emacs/")
+(setq default-directory "c:/Users/17186/test/emacs/")
 
 ;;
 ;; Set the ~/.emacs.d directory as the directory which is this file.
 
-(setq user-emacs-directory "C:/users/administrator/appdata/roaming/.emacs.d")
+(setq user-emacs-directory "C:/users/17186/appdata/roaming/.emacs.d")
 
 ;; 设置默认文件夹
-(setq default-directory "c:/Users/Administrator/test/emacs")
+(setq default-directory "c:/Users/17186/test/emacs")
 
 ;; Set load path
-(add-to-list 'load-path "C:/users/administrator/appdata/roaming/.emacs.d/elpa")
+(add-to-list 'load-path "C:/users/17186/appdata/roaming/.emacs.d/elpa")
+
+;; 设置默认的编码环境
+;; (set-default-coding-systems 'utf-8)
+(setq-default markdown-coding-system 'utf-8)
+
+;; 设置默认的字体和字号
+(add-to-list 'default-frame-alist
+             '(font . "Source Code Pro-10"))
+;;(set-frame-font "Source Code Pro-48")
+;;(set-face-attribute 'default nil :height 720)
 
 ;; below is set code for package install
 ;; 
 (require 'magit)
 (require 'htmlize)
+
+;; 配置cpp一键运行程序
+;; (defun my-g++-compile-and-run ()
+;;   (interactive)
+;;   (compile (format "g++ %s && ./a.out" (buffer-file-name))))
+;; (define-key c++-mode-map (kbd "<f5>") #'my-g++-compile-and-run)
+
+;; 所有关于org-导出latex模板的设置，包括自定义模板
+;;org-export latex
+(with-eval-after-load 'ox-latex
+  (add-to-list 'org-latex-classes
+               '("org-article"
+                 "\\documentclass{article}
+                 \\usepackage{amsmath,amsfonts,amsthm,amssymb}
+                 \\usepackage{setspace}
+                 \\usepackage{fancyhdr}
+                 \\usepackage{lastpage}
+                 \\usepackage{extramarks}
+                 \\usepackage{chngpage}
+                 \\usepackage{soul}
+                 \\usepackage[usenames,dvipsnames]{color}
+                 \\usepackage{graphicx,float,wrapfig}
+                 \\usepackage{ifthen}
+                 \\usepackage{listings}
+                 \\usepackage{courier}
+                 \\usepackage[colorlinks,
+                              breaklinks=true,
+                              bookmarks=false,
+                              linkcolor=blue,
+                              anchorcolor=green,
+                              citecolor=green
+                              ]{hyperref}  
+                 \\usepackage{xcolor}
+                 \\usepackage{xeCJK}
+                 \\usepackage{indentfirst}
+                 [NO-DEFAULT-PACKAGES]      
+                 [PACKAGES]                 
+                 [EXTRA]"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
 
 ;; 所有关于latex导出pdf的设置
 (require 'auctex)
@@ -133,28 +186,6 @@
 ;; latex preview pane
 (require 'latex-preview-pane)
 
-;; web浏览器w3m
-;; 设置通过cygwin下载下来的emacs-w3m保存路径
-(add-to-list 'load-path "D:/cygwin64/home/Administrator/emacs-w3m")
-(require 'w3m)
-;; (require 'mime-w3m) 
-;; 设置主页 
-(setq w3m-home-page "http://www.baidu.com") 
-;; 设置显示图片
-(setq w3m-default-display-inline-images t)
-(setq w3m-default-toggle-inline-images t)
-;; 显示图标  
-(setq w3m-show-graphic-icons-in-header-line t) 
-(setq w3m-show-graphic-icons-in-mode-line t)
-;; 启用cookie  
-(setq w3m-use-cookies t)
-;; 设定w3m运行的参数，分别为使用cookie和使用框架 
-(setq w3m-command-arguments '("-cookie" "-F"))
-;; Browse url function use w3m
-(setq browse-url-browser-function 'w3m-browse-url)
-;; W3M view url new session in background
-(setq w3m-view-this-url-new-session-in-background t)
-
 ;; smex: make command faster 
 (require 'smex) ; Not needed if you use package.el
 (smex-initialize) ; Can be omitted. This might cause a (minimal) delay
@@ -164,6 +195,20 @@
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 ;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+;;一键快速编译并运行 C++-mode
+(defun your-g++-compile-and-run ()
+  (interactive)
+  (compile (format "g++ %s -g -o %s && %s " (buffer-name (current-buffer)) (substring (buffer-name (current-buffer)) 0 -4) (substring (buffer-name (current-buffer)) 0 -4))))
+(global-set-key [(f5)] 'your-g++-compile-and-run)  ;;快捷键F9
+
+;;一键快速编译 C++-mode
+(defun quick-compile ()
+  "A quick compile funciton for C++"
+  (interactive)
+  (compile (concat "g++ " (buffer-name (current-buffer)) " -g -o " (substring (buffer-name (current-buffer)) 0 -4)))
+  )
+(global-set-key [(f9)] 'quick-compile)  ;;快捷键F9
 
 ;; web-mode support for html
 ;; 
@@ -199,8 +244,29 @@
 (set-fontset-font "fontset-default"
                   'gb18030 '("Microsoft YaHei" . "unicode-bmp"))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;org mode 
 ;; org mode 9.2 更新了<s TAB按键快速添加src代码块的修改，如果依旧需要用此功能需要添加如下语句
 (require 'org-tempo)
+
+;; 在org-mode中绑定输出markdown语言的选项到C-c C-c
+(eval-after-load "org"
+  '(require 'ox-md nil t))
+
+;; 设置org-babel代码块交互显示功能
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (C . t)
+   (java . t)
+   (js . t)
+   (ruby . t)
+   (ditaa . t)
+   (python . t)
+   (shell . t)
+   (latex . t)
+   (plantuml . t)
+   (R . t)))
 
 ;; global-set-key
 (global-set-key (kbd "C-x g") 'magit-status)
