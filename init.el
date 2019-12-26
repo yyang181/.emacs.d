@@ -178,10 +178,14 @@
 ;; edit default screenshop methods to imagemagick/convert
 ;; (setq org-download-screenshot-method "import %s")
 (setq org-download-screenshot-method "convert clipboard: %s")
+;; 设置org-download插入图片的默认文件路径
 ;; (setq-default org-download-image-dir "./images")
+(setq-default org-download-image-dir "./assets")
+;; (setq-default org-download-image-dir (file-name-sans-extension (buffer-name)))
 ;; set key binding for org-download-screenshot
 (global-set-key (kbd "C-S-y") 'org-download-screenshot)
 (add-hook 'dired-mode-hook 'org-download-enable)
+
 
 ;; latex preview pane
 (require 'latex-preview-pane)
@@ -291,6 +295,12 @@
 ;;
 ;; set linum-mode
 (global-set-key (kbd "C-x t") 'linum-mode)
+
+;; 添加多窗口管理工具winner-mode 用来恢复上一次的窗口状态
+;; (winner-mode 1)
+;; ;; copied from http://puntoblogspot.blogspot.com/2011/05/undo-layouts-in-emacs.html
+;; (global-set-key (kbd "C-x 4 u") 'winner-undo)
+;; (global-set-key (kbd "C-x 4 r") 'winner-redo)
 
 ;;;;;;; Package Repositories ;;;;;;;;;;;;;;
 

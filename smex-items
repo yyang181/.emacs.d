@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- replace-string
  ein:notebooklist-login
+ replace-string
+ gud-gdb
+ eshell
+ gdb
  list-packages
  shell
- eshell
- rename-file
- rename-buffer
 )
 
 ;; ----- smex-data -----
@@ -17,8 +17,8 @@
  (w3m-buffer . 1)
  (w3m-browse-url . 2)
  (flush-lines . 10)
- (replace-string . 13)
- (eshell . 5)
+ (replace-string . 52)
+ (eshell . 6)
  (iimage-mode . 17)
  (replace-regexp . 60)
  (query-replace-regexp . 10)
@@ -35,11 +35,13 @@
  (shell . 5)
  (fill-region . 1)
  (org-download-screenshot . 1)
- (ein:notebooklist-login . 35)
+ (ein:notebooklist-login . 96)
  (ein:notebook-open . 2)
  (org-md-export-to-markdown . 1)
  (org-mode . 1)
  (revert-buffer . 1)
  (rename-buffer . 4)
  (rename-file . 1)
+ (gdb . 1)
+ (gud-gdb . 1)
 )
